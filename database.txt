@@ -1,0 +1,64 @@
+table semester_akademik:
+id int(11) primary;
+tahun int();
+semester enum(1, 2, 3, 4, 5, 6, 7, 8);
+tanggal_mulai date;
+tanggal_selesai date;
+is_aktif boolean;
+
+table kelas:
+id int(11) primary;
+mata_kuliah_id int();
+semester_akademik_id int();
+kurikulum_id int();
+kode_kelas varchar(20);
+kapasitas int();
+status enum();
+
+table dosen_kelas:
+id int(11) primary;
+kelas_id int();
+dosen_id int();
+peran enum();
+
+table mahasiswa:
+id int(11) primary;
+nim varchar(14);
+nama varchar(50);
+program_studi_id int(11);
+kurikulum_id int(11);
+angkatan int(11);
+status enum();
+
+table krs:
+id int() primary;
+mahasiswa_id int();
+kelas_id int();
+semester_akademik_id int();
+status_krs enum();
+nilai_huruf varchar();
+nilai_angka float();
+
+table jadwal_kelas:
+id int() primary;
+kelas_id int();
+ruangan_id int();
+hari enum();
+jam_mulai date();
+jam_selesai date();
+tipe_sesi enum();
+  
+table ruangan:
+id int() primary;
+kode varchar(12);
+nama varchar(50);
+tipe enum();
+kapasitas int();
+
+table jurnal:
+id int() primary;
+judul varchar(50);
+gambar varchar(100);
+link varchar(200);
+
+

@@ -1,0 +1,43 @@
+# ============================================
+# application.properties.example
+# COPILAH file ini jadi application.properties
+# lalu isi konfigurasi lokal kamu.
+# File application.properties TIDAK boleh di-commit!
+# ============================================
+
+# ---- DATABASE ----
+spring.datasource.url=jdbc:mysql://localhost:3306/NAMA_DATABASE?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=
+spring.sql.init.mode=never
+
+# ---- JPA / HIBERNATE ----
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# ---- SERVER ----
+server.port=8080
+server.address=0.0.0.0
+
+# ---- FILE UPLOAD ----
+spring.servlet.multipart.max-file-size=25MB
+spring.servlet.multipart.max-request-size=25MB
+
+# ---- JWT ----
+# Ganti dengan secret 32-byte yang di-generate sendiri
+# Contoh generate: openssl rand -base64 32
+jwt.secret=GANTI_DENGAN_SECRET_BASE64_32BYTE
+jwt.expiration=36000000
+
+# ---- DIREKTORI UPLOAD ----
+dir-uploads=./uploads
+dir-prodi=${dir-uploads}/prodi
+dir-pengumuman=${dir-uploads}/pengumuman
+dir-berita=${dir-uploads}/berita
+dir-pmb=${dir-uploads}/pmb
+dir-kalender_akademik=${dir-uploads}/kalender_akademik
+dir-kurikulum=${dir-uploads}/kurikulum
+dir-dosen=${dir-uploads}/dosen
+dir-user=${dir-uploads}/user
